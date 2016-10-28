@@ -12,7 +12,7 @@ export default class Board {
                          this.height);
 	}
 	drawLine(context) {
-      context.setLineDash([20, 10]);
+      context.setLineDash([10, 10]);
       context.beginPath();
       context.moveTo(this.width / 2, 0);
       context.lineTo(this.width / 2, this.height);
