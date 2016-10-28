@@ -13,11 +13,9 @@ export default class Game {
            this.height = canvas.height;
            this.context = canvas.getContext('2d');
            this.board = new Board(this.height, this.width,'black');
-           this.p1 = new Paddle(this.height, 30, 'white', player1Keys);
-           this.p2 = new Paddle(this.height, this.width - 35, 'white', player2Keys);
-           this.ball = new Ball(this.height/2, this.width/2, this.size, 'red');
-
-
+           this.p1 = new Paddle(this.height, 10, 'white', player1Keys);
+           this.p2 = new Paddle(this.height, this.width - 15, 'white', player2Keys);
+           this.ball = new Ball(this.height/2, this.width/2, this.size, );
    }
 
    render() {
