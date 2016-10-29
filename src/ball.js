@@ -1,3 +1,8 @@
+const ping = new Audio('sounds/pong-01.wav')
+const pong = new Audio('sounds/pong-02.wav')
+const pang = new Audio('sounds/pong-03.wav')
+
+
 export default class Ball {
    	constructor(boardHeight, boardWidth) {
       this.boardWidth = boardWidth;
@@ -29,6 +34,7 @@ export default class Ball {
       if (inRightEnd) {
         if(this.y >= p2.y + this.radius && this.y <=(p2.y + p2.height)){
           this.vx *= -1;
+          ping.play();
         }
       }
 
@@ -38,6 +44,7 @@ export default class Ball {
       if (inLeftEnd) {
         if (this.y >= p1.y + this.radius && this.y <= (p1.y + p1.height)) {
           this.vx *= -1;
+          ping.play()
         }
       }
     }
@@ -46,14 +53,15 @@ export default class Ball {
   bounce() {
     if (this.y <= 0 + this.radius || this.y >= 150 - this.radius) {
         this.vy *= -1
+        pong.play()
     }
-    /*if (this.x <= 0 + this.radius || this.x >=300 -this.radius) {
-        this.vy
-        this.x = this.boardWidth
-        this.y = this.boardHeight
-        this.vx *= -1
+    if (this.x <= 0 + this.radius) {
+      pang.play();
+    }
+    if (this.x >=300 -this.radius) {
+        pang.play();
         
-    }*/
+    }
   }
   score (p1Score,p2Score) {
 
@@ -63,7 +71,8 @@ export default class Ball {
       this.x = this.boardWidth
       this.y = this.boardHeight
       this.vx *= -1
-      p1Score.score++;
+      p1Score.score++
+      //play.pang()
 
     } else if (this.x >= 300) {
       this.vy
@@ -71,7 +80,8 @@ export default class Ball {
       this.x = this.boardWidth
       this.y = this.boardHeight
       this.vx *= -1
-      p2Score.score++;
+      p2Score.score++
+      //play.pang()
     }
   };
 
