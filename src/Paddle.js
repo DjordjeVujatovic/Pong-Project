@@ -1,7 +1,7 @@
 export default class Paddle {
     constructor(boardHeight, x, color, keys) {
 
-        this.speed = 5;
+        this.speed = 10;
         this.keys = keys;
         this.width = 5;
         this.height = 60;
@@ -27,9 +27,7 @@ export default class Paddle {
                         default: return;
                     }
                 }    
-            // move(){
-            //     console.log(keys)
-            // }
+                
             moveUp(){
                 if(this.y>= 5){
                     console.log("up")

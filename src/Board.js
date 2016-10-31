@@ -3,7 +3,7 @@ export default class Board {
 		this.height = height;
 		this.width = width;
 		this.color = color;
-		console.log(this.width, this.height, this.color);
+		//console.log(this.width, this.height, this.color);
 	}
 	drawBoard (context) {
 		context.fillStyle = this.color;

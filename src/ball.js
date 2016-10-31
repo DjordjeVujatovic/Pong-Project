@@ -55,13 +55,13 @@ export default class Ball {
         this.vy *= -1
         pong.play()
     }
-    if (this.x <= 0 + this.radius) {
-      pang.play();
+    /*if (this.x <= 0 || this.x >=300) {
+        pang.play()
     }
-    if (this.x >=300 -this.radius) {
+    /*if (this.x >=300 -this.radius) {
         pang.play();
         
-    }
+    }*/
   }
   score (p1Score,p2Score) {
 
@@ -72,7 +72,7 @@ export default class Ball {
       this.y = this.boardHeight
       this.vx *= -1
       p1Score.score++
-      //play.pang()
+      pang.play()
 
     } else if (this.x >= 300) {
       this.vy
@@ -81,7 +81,7 @@ export default class Ball {
       this.y = this.boardHeight
       this.vx *= -1
       p2Score.score++
-      //play.pang()
+      pang.play()
     }
   };
 
