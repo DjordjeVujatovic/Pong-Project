@@ -14,7 +14,6 @@ export default class Ball {
       this.height = 10;
       this.width = 10;
       this.radius = 5;
-
    }
     draw(context) {
     context.fillStyle = 'white';
@@ -22,8 +21,7 @@ export default class Ball {
     context.arc(this.x, this.y, 5, 0, 2 * Math.PI, true);
     context.fill();
     context.closePath();
-
-  }
+}
     paddleCollision (p1,p2) {
 
     if (this.vx > 0) {
@@ -55,13 +53,6 @@ export default class Ball {
         this.vy *= -1
         pong.play()
     }
-    /*if (this.x <= 0 || this.x >=300) {
-        pang.play()
-    }
-    /*if (this.x >=300 -this.radius) {
-        pang.play();
-        
-    }*/
   }
   score (p1Score,p2Score) {
 
@@ -91,9 +82,6 @@ export default class Ball {
      this.score(p1Score, p2Score);
      this.paddleCollision(p1, p2);
      this.bounce();
-     this.draw(context);
-     
-     
-
-}
+     this.draw(context);   
+  }
 }
